@@ -1,2 +1,6 @@
 # env config
 .env
+
+# data
+data/interim/housing_data.csv
+data/raw/whole_data/realtor-data.zip.csv
