@@ -2,6 +2,10 @@ import streamlit as st
 import joblib
 
 
+def make_prediction(model, data):
+#      make prediction
+
+
 def main():
     st.set_page_config(layout="wide")
     st.header("Hi! 👋")
@@ -39,7 +43,7 @@ def main():
 
         model_choice = st.radio(
             "Which model would you like to use?",
-            ['Logistic Regression', 'Decision Tree'],
+            ['Linear Regression', 'Decision Tree'],
             captions=["A simple linear approach to predicting house prices.",
                       "A tree-based machine learning model for predicting house prices. "]
         )
@@ -67,8 +71,10 @@ def main():
        )
 
        if st.button("Predict", type="primary"):
-           st.header("Housing Price")
+            # process the inputs
 
+
+            if model_choice == 'Linear Regression':
 
 
 
