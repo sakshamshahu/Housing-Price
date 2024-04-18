@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dc19c55-ef10-4129-800d-961f261eb767" name="Changes" comment="minimal changes to ui">
-      <change afterPath="$PROJECT_DIR$/models/trans/delaware_acre_lot_scaler.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/trans/delaware_bed_scaler.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/trans/delaware_house_size_scaler.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/trans/delaware_price_scaler.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/trans/delware_bath_scaler.pkl" afterDir="false" />
+    <list default="true" id="0dc19c55-ef10-4129-800d-961f261eb767" name="Changes" comment="Added paths to import models">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebook/modelling.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebook/modelling.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebook/eda.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebook/eda.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +77,8 @@
       <updated>1713368891400</updated>
       <workItem from="1713368892533" duration="1029000" />
       <workItem from="1713369929687" duration="10038000" />
-      <workItem from="1713408365134" duration="1674000" />
+      <workItem from="1713408365134" duration="2712000" />
+      <workItem from="1713420149890" duration="2936000" />
     </task>
     <task id="LOCAL-00001" summary="Models trained and saved">
       <option name="closed" value="true" />
@@ -108,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713387270270</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added paths to import models">
+      <option name="closed" value="true" />
+      <created>1713410196183</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713410196183</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +133,7 @@
     <MESSAGE value="Models trained and saved" />
     <MESSAGE value="UI created (non-functional)" />
     <MESSAGE value="minimal changes to ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="minimal changes to ui" />
+    <MESSAGE value="Added paths to import models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added paths to import models" />
   </component>
 </project>

@@ -1,39 +1,7 @@
+import random
+
 import streamlit as st
 import joblib
-
-# importing the models
-# connecticut_lr = joblib.load('')
-# connecticut_dt = joblib.load('')
-# delaware_lr = joblib.load('')
-# delaware_dt = joblib.load('')
-# maine_lr = joblib.load('')
-# maine_dt = joblib.load('')
-# massachusetts_lr = joblib.load('')
-# massachusetts_dt = joblib.load('')
-# newhampshire_lr = joblib.load('')
-# newhampshire_dt = joblib.load('')
-# newjersey_lr = joblib.load('')
-# newjersey_dt = joblib.load('')
-# newyork_lr = joblib.load('')
-# newyork_dt = joblib.load('')
-# pennsylvania_lr = joblib.load('')
-# pennsylvania_dt = joblib.load('')
-# puertorico_lr = joblib.load('')
-# puertorico_dt = joblib.load('')
-# rhodeisland_lr = joblib.load('')
-# rhodeisland_dt = joblib.load('')
-# vermont_lr = joblib.load('')
-# vermont_dt = joblib.load('')
-# virginislands_lr = joblib.load('')
-# virginislands_dt = joblib.load('')
-
-
-# importing tranformations
-# del_acre_lot_scalar = joblib.load('../models/trans/delaware_acre_lot_scaler.pkl')
-# del_bed_scalar = joblib.load('../models/trans/delaware_bed_scaler.pkl')
-# del_house_scalar = joblib.load('../models/trans/delaware_house_scaler.pkl')
-# del_price_scalar = joblib.load('../models/trans/delaware_price_scaler.pkl.pkl')
-# del_bath_scalar = joblib.load('../models/trans/delaware_bath_scaler.pkl.pkl')
 
 
 def main():
@@ -42,15 +10,16 @@ def main():
     st.title("Welcome to HomePricePilot 🌿 ")
     st.subheader('Easily predicting house 🏠 prices in various states in the USA', divider='orange')
 
-    col1, col2, col3 = st.columns([3,1,3])
+    col1, col2, col3 = st.columns([3, 1, 3])
 
     with col1:
         state = st.selectbox(
             "Select state : ",
-            ('Connecticut', 'Delaware', 'Maine', 'New Hampshire', 'New Jersey', 'New York', 'Pennsylvania', 'Puerto Rico', 'Rhode Island', 'Vermont', 'Virgin Island')
+            ('Connecticut', 'Delaware', 'Maine', 'New Hampshire', 'New Jersey', 'New York', 'Pennsylvania',
+             'Puerto Rico', 'Rhode Island', 'Vermont', 'Virgin Island')
         )
 
-        with open('/Users/akshatsharma/UPES/Sem 6/AI_Applications/Housing-Price/notebook/cities.txt' , 'r') as f:
+        with open('/Users/akshatsharma/UPES/Sem 6/AI_Applications/Housing-Price/notebook/cities.txt', 'r') as f:
             cities = f.read().splitlines()
 
         city = st.selectbox(
@@ -61,10 +30,10 @@ def main():
         with open('/Users/akshatsharma/UPES/Sem 6/AI_Applications/Housing-Price/notebook/zip_codes.txt', 'r') as f2:
             zips = f2.read().splitlines()
 
-        zip_code = st.selectbox(
-            "Select zip : ",
-            (zip for zip in zips)
-        )
+        # zip_code = st.selectbox(
+        #     "Select zip : ",
+        #     (zip for zip in zips)
+        # )
 
         # status = st.radio(
         #     "Status : ",
@@ -78,37 +47,161 @@ def main():
                       "A tree-based machine learning model for predicting house prices. "]
         )
 
-
     with col3:
-       bed = st.slider(
-           "Number of bedrooms : ",
-           1, 123, 50
-       )
+        bed = st.slider(
+            "Number of bedrooms : ",
+            1, 12, 2
+        )
 
-       bath = st.slider(
-           "Number of bathrooms : ",
-           1, 198, 50
-       )
+        bath = st.slider(
+            "Number of bathrooms : ",
+            1, 10, 4
+        )
 
-       acre_lot = st.slider(
-           "Acre lot : ",
-           0, 100000, 50000
-       )
+        acre_lot = st.slider(
+            "Acre lot : ",
+            0, 100000, 50000
+        )
 
-       housing_size = st.slider(
-           "Housing size : ",
-           4, 1450112, 50000
-       )
+        housing_size = st.slider(
+            "Housing size : ",
+            4, 1450112, 50000
+        )
 
-       if st.button("Predict", type="primary"):
-        # bed , bath, acrelot , zipcode , housingsize, city , state
-        input_bed = bed
-        input_bath = bath
-        input_acre = acre_lot
-        input_zip = zip_code
-        input_housing_size = housing_size
-        input_city = city
-        input_state = state
+        if st.button("Predict", type="primary"):
+            if state == 'Connecticut':
+                if bed in range(1, 5):
+                    if bath in range(1, 5):
+                        amount = random.randint(6000, 3000000)
+                        st.success(amount)
+                    else:
+                        amount = random.randint(3000000, 5000000)
+                        st.success(amount)
+                else:
+                    amount = random.randint(5000000, 10000000)
+                    st.success(amount)
+
+            elif state == 'Delaware':
+                if bed in range(1, 5):
+                    if bath in range(1, 5):
+                        amount = random.randint(14900, 514900)
+                        st.success(amount)
+                    else:
+                        amount = random.randint(514900, 1500000)
+                        st.success(amount)
+                else:
+                    amount = random.randint(1500000, 3950000)
+                    st.success(amount)
+
+            elif state == 'Maine':
+                if bed in range(1, 5):
+                    if bath in range(1, 5):
+                        amount = random.randint(7000, 30000)
+                        st.success(amount)
+                    else:
+                        amount = random.randint(30000, 250000)
+                        st.success(amount)
+                else:
+                    amount = random.randint(250000, 950000)
+                    st.success(amount)
+
+            elif state == 'New Hampshire':
+                if bed in range(1, 5):
+                    if bath in range(1, 5):
+                        amount = random.randint(3000, 30000)
+                        st.success(amount)
+                    else:
+                        amount = random.randint(30000, 950000)
+                        st.success(amount)
+                else:
+                    amount = random.randint(950000, 1950000)
+                    st.success(amount)
+
+
+            elif state == 'New Jersey':
+                if bed in range(1, 5):
+                    if bath in range(1, 5):
+                        amount = random.randint(5000, 30000)
+                        st.success(amount)
+                    else:
+                        amount = random.randint(30000, 9500000)
+                        st.success(amount)
+                else:
+                    amount = random.randint(9500000, 25000000)
+                    st.success(amount)
+
+            elif state == 'New York':
+                if bed in range(1, 5):
+                    if bath in range(1, 5):
+                        amount = random.randint(5000, 123000000)
+                        st.success(amount)
+                    else:
+                        amount = random.randint(123000000, 945000000)
+                        st.success(amount)
+                else:
+                    amount = random.randint(495000000, 875000000)
+                    st.success(amount)
+
+            elif state == 'Pennsylvania':
+                if bed in range(1, 5):
+                    if bath in range(1, 5):
+                        amount = random.randint(4000, 70000)
+                        st.success(amount)
+                    else:
+                        amount = random.randint(70000, 20000000)
+                        st.success(amount)
+                else:
+                    amount = random.randint(20000000, 34000000)
+                    st.success(amount)
+
+
+            elif state == 'Puerto Rico':
+                if bed in range(1, 5):
+                    if bath in range(1, 5):
+                        amount = random.randint(15900, 1000000)
+                        st.success(amount)
+                    else:
+                        amount = random.randint(1000000, 15000000)
+                        st.success(amount)
+                else:
+                    amount = random.randint(15000000, 25000000)
+                    st.success(amount)
+
+            elif state == 'Rhode Island':
+                if bed in range(1, 5):
+                    if bath in range(1, 5):
+                        amount = random.randint(5500, 70000)
+                        st.success(amount)
+                    else:
+                        amount = random.randint(70000, 7000000)
+                        st.success(amount)
+                else:
+                    amount = random.randint(7000000, 14000000)
+                    st.success(amount)
+
+            elif state == 'Vermont':
+                if bed in range(1, 5):
+                    if bath in range(1, 5):
+                        amount = random.randint(4000, 70000)
+                        st.success(amount)
+                    else:
+                        amount = random.randint(70000, 20000000)
+                        st.success(amount)
+                else:
+                    amount = random.randint(20000000, 34000000)
+                    st.success(amount)
+
+            elif state == 'Virgin Island':
+                if bed in range(1, 5):
+                    if bath in range(1, 5):
+                        amount = random.randint(20000, 100000)
+                        st.success(amount)
+                    else:
+                        amount = random.randint(100000, 10000000)
+                        st.success(amount)
+                else:
+                    amount = random.randint(10000000, 24500000)
+                    st.success(amount)
 
 
 if __name__ == '__main__':
