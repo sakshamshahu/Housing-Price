@@ -1,9 +1,39 @@
 import streamlit as st
 import joblib
 
+# importing the models
+# connecticut_lr = joblib.load('')
+# connecticut_dt = joblib.load('')
+# delaware_lr = joblib.load('')
+# delaware_dt = joblib.load('')
+# maine_lr = joblib.load('')
+# maine_dt = joblib.load('')
+# massachusetts_lr = joblib.load('')
+# massachusetts_dt = joblib.load('')
+# newhampshire_lr = joblib.load('')
+# newhampshire_dt = joblib.load('')
+# newjersey_lr = joblib.load('')
+# newjersey_dt = joblib.load('')
+# newyork_lr = joblib.load('')
+# newyork_dt = joblib.load('')
+# pennsylvania_lr = joblib.load('')
+# pennsylvania_dt = joblib.load('')
+# puertorico_lr = joblib.load('')
+# puertorico_dt = joblib.load('')
+# rhodeisland_lr = joblib.load('')
+# rhodeisland_dt = joblib.load('')
+# vermont_lr = joblib.load('')
+# vermont_dt = joblib.load('')
+# virginislands_lr = joblib.load('')
+# virginislands_dt = joblib.load('')
 
-def make_prediction(model, data):
-#      make prediction
+
+# importing tranformations
+# del_acre_lot_scalar = joblib.load('../models/trans/delaware_acre_lot_scaler.pkl')
+# del_bed_scalar = joblib.load('../models/trans/delaware_bed_scaler.pkl')
+# del_house_scalar = joblib.load('../models/trans/delaware_house_scaler.pkl')
+# del_price_scalar = joblib.load('../models/trans/delaware_price_scaler.pkl.pkl')
+# del_bath_scalar = joblib.load('../models/trans/delaware_bath_scaler.pkl.pkl')
 
 
 def main():
@@ -36,10 +66,10 @@ def main():
             (zip for zip in zips)
         )
 
-        status = st.radio(
-            "Status : ",
-            ['For sale', 'Ready to build']
-        )
+        # status = st.radio(
+        #     "Status : ",
+        #     ['For sale', 'Ready to build']
+        # )
 
         model_choice = st.radio(
             "Which model would you like to use?",
@@ -71,11 +101,14 @@ def main():
        )
 
        if st.button("Predict", type="primary"):
-            # process the inputs
-
-
-            if model_choice == 'Linear Regression':
-
+        # bed , bath, acrelot , zipcode , housingsize, city , state
+        input_bed = bed
+        input_bath = bath
+        input_acre = acre_lot
+        input_zip = zip_code
+        input_housing_size = housing_size
+        input_city = city
+        input_state = state
 
 
 if __name__ == '__main__':
